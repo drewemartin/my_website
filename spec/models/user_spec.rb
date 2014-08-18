@@ -7,9 +7,12 @@ describe User do
     expect(user).to be_valid
   end
 
-  it 'should only be able to save a maximum of one record' do
-    user = FactoryGirl.build(:user)
+  it 'should only accept one email' do
     expect(FactoryGirl.build(:user, email:'hello')).to_not be_valid
+  end
+
+  it 'should only accept one password' do
+    expect(FactoryGirl.build(:user, password:'something')).to_not be_valid
   end
 
 end
