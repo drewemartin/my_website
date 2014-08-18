@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_filter :require_login, only: [:index, :new, :create] 
+  # before_filter :require_login, only: [:index, :new, :create] 
   # GET /users
   # GET /users.json
   def index
@@ -27,12 +27,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
       if @user.save
-        redirect_to @user, notice: 'User was successfully created.' 
-        login(@user.email, @user.password)
+        redirect_to @user, notice: 'Profile successfully created.' 
+        auto_login(@user)
       else
         render :new 
-      end
-    end
+      end  
   end
 
   # PATCH/PUT /users/1
