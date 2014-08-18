@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   private
   def must_have_certain_details
     if email != APP_CONFIG['EMAIL'] || password != APP_CONFIG['PASSWORD']
-      errors.add(:email, 'is not authorized')
+      errors.add(:email, 'not authorized')
     end
   end
 end
