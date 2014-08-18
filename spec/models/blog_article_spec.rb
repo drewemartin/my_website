@@ -17,6 +17,14 @@ describe BlogArticle do
       expect(FactoryGirl.build(:blog_article, body:nil)).to_not be_valid
     end
 
+    it 'should not have an empty publish_now value' do
+      expect(FactoryGirl.build(:blog_article, publish_now:nil)).to_not be_valid
+    end
+
+    it 'should have a publish_now that equals yes or no' do
+      expect(FactoryGirl.build(:blog_article, publish_now:'hello')).to_not be_valid
+    end
+
   end
 
   context 'as for association' do
