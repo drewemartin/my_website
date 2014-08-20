@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root :to => 'welcomes#index'
 
   resources :user_sessions
+  resources :abouts
 
   resources :blog_articles do
-    resources :comments
+    resources :comments, only:[:new, :create, :destroy]
   end
 
   resources :users do
