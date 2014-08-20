@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_many :blog_articles
+  has_many :comments, through: :blog_articles 
 
   validates :password, length: { minimum: 3 }
   validates :password, confirmation: true
