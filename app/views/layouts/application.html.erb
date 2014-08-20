@@ -22,13 +22,15 @@
     <p id="alert"><%= flash[:alert] %></p>
   </div>
 
+
+
+<%= yield %>
+
   <div>
     <li><%= link_to 'About Me', abouts_path%></li>
     <li><%= link_to 'Blog', blog_articles_path %></li>
     <li><%= link_to 'Contact',  blog_articles_path %></li>
   </div>
-
-<%= yield %>
 
 </body>
 </html>
