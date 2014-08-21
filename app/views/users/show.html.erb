@@ -6,7 +6,7 @@
 <div id='published'>
 
   <%= render 'published_blog_list' %>
-  
+
 </div>
 
 <div id='unpublished'>
@@ -20,7 +20,7 @@
 <script type="text/javascript">
   $(function() {
 
-    #('#new_blog_article')
+    $('#new_blog_article')
       .on('ajax:beforeSend', function() {
         $("input[type='submit']")
           .val('saving...')
@@ -32,5 +32,5 @@
           .removeAttr('disabled');
       });
 
-  })
+  });
 </script>

@@ -12,10 +12,18 @@ class User < ActiveRecord::Base
 
   validate :must_have_certain_details
 
+
+  def blogs_in_order
+    blog_articles.order(created_at: :desc)
+  end
+
+
   private
   def must_have_certain_details
     if email != APP_CONFIG['EMAIL'] || password != APP_CONFIG['PASSWORD']
       errors.add(:email, 'not authorized')
     end
   end
+
+  
 end

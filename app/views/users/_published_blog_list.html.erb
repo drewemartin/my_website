@@ -1,6 +1,6 @@
 <h4>Published Blog Posts</h4>
-<% @blog_posts.each do |blog| %>
-  <% if blog.publish_now.downcase == 'yes' %>
+<% @user.blogs_in_order.each do |blog| %>
+  <% if blog.publish_now == 'yes' %>
     <div>
       <h5><%= blog.title %></h5>
       <p><%= blog.body %></p>

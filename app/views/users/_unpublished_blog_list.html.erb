@@ -1,6 +1,6 @@
 <h4>Unpublished Blog Posts</h4>
-<% @blog_posts.each do |blog| %>
-  <% if blog.publish_now.downcase == 'no' %>
+<% @user.blogs_in_order.each do |blog| %>
+  <% if blog.publish_now == 'no' %>
     <div>
       <h5><%= blog.title %></h5>
       <p><%= blog.body %></p>

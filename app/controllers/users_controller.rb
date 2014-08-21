@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @blog_posts = User.find(params[:id]).blog_articles.order(created_at: :desc)
 
     if current_user
       @blog_article = @user.blog_articles.build
