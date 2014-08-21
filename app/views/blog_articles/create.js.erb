@@ -1,0 +1,8 @@
+<% if @blog_article.errors.present? %>
+  $("#blog-article-form-errors").html("<%= escape_javascript(render(:partial => '/products/review_form_errors')) %>");
+<% else %>
+  $("#blog-article-errors").html("");
+  $("#published").html("<%= escape_javascript(render(:partial => '/users/published_blog_list')) %>");
+  $("#unpublished").html("<%= escape_javascript(render(:partial => '/users/unpublished_blog_list')) %>");
+  $("#new_review")[0].reset();
+<% end %>

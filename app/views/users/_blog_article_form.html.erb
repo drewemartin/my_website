@@ -22,20 +22,3 @@
   </div>
 <% end %>
 
-<script type="text/javascript">
-  $(function() {
-
-    #('#new_blog_article')
-      .on('ajax:beforeSend', function() {
-        $("input[type='submit']")
-          .val('saving...')
-          .attr('disabled', 'disabled');
-      })
-      .on('ajax:complete', function(){
-        $("input[type='submit']")
-          .val('Create Blog Article')
-          .removeAttr('disabled');
-      });
-
-  })
-</script>

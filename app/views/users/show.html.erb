@@ -3,6 +3,34 @@
 
 <%= render 'blog_article_form' %>
 
-<%= render 'published_blog_list' %>
+<div id='published'>
 
-<%= render 'unpublished_blog_list' %>
+  <%= render 'published_blog_list' %>
+  
+</div>
+
+<div id='unpublished'>
+
+  <%= render 'unpublished_blog_list' %>
+
+</div>
+
+
+
+<script type="text/javascript">
+  $(function() {
+
+    #('#new_blog_article')
+      .on('ajax:beforeSend', function() {
+        $("input[type='submit']")
+          .val('saving...')
+          .attr('disabled', 'disabled');
+      })
+      .on('ajax:complete', function(){
+        $("input[type='submit']")
+          .val('Create Blog Article')
+          .removeAttr('disabled');
+      });
+
+  })
+</script>
