@@ -1,6 +1,9 @@
   
 
 <% form_for ([@user, @blog_article]), :remote => true do |f| %>
+  
+  <%= render 'blog_articles_form_errors' %>
+
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
