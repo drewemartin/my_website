@@ -1,8 +1,7 @@
 class BlogArticlesController < ApplicationController
-  before_action :set_blog_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /blog_articles
-  # GET /blog_articles.json
+  before_filter :load_user
+  
   def index
     @blog_articles = BlogArticle.all
   end
@@ -24,16 +23,16 @@ class BlogArticlesController < ApplicationController
   # POST /blog_articles
   # POST /blog_articles.json
   def create
-    @blog_article = BlogArticle.new(blog_article_params)
+    @blog_article = @user.blog_articles.build(blog_article_params)
     @blog_article.user = current_user
 
     respond_to do |format|
       if @blog_article.save
         format.html { redirect_to @blog_article, notice: 'Blog article was successfully created.' }
-        format.json { render :show, status: :created, location: @blog_article }
+        format.js {}
       else
-        format.html { render :new }
-        format.json { render json: @blog_article.errors, status: :unprocessable_entity }
+        format.html { render :new, alert: 'there was an error' }
+        format.js {}
       end
     end
   end
@@ -43,7 +42,7 @@ class BlogArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @blog_article.update(blog_article_params)
-        format.html { redirect_to @blog_article, notice: 'Blog article was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Blog article was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog_article }
       else
         format.html { render :edit }
@@ -57,19 +56,23 @@ class BlogArticlesController < ApplicationController
   def destroy
     @blog_article.destroy
     respond_to do |format|
-      format.html { redirect_to blog_articles_url, notice: 'Blog article was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user), notice: 'Blog article was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog_article
+    
+    def set_user
       @blog_article = BlogArticle.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def blog_article_params
       params.require(:blog_article).permit(:body, :title, :publish_now)
     end
+
+    def load_user
+      @user = User.find(current_user)
+    end
+
 end

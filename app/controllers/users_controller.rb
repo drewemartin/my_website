@@ -7,9 +7,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
+
   def show
+    @user = User.find(params[:id])
+    @blog_posts = User.find(params[:id]).blog_articles
+
+    if current_user
+      @blog_article = @user.blog_articles.build
+    end
   end
 
   # GET /users/new
