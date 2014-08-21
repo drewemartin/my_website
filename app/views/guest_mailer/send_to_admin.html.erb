@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h5>Email Sent from Your Site</h5>
+    <h6>Sender: <%= @mail.name %></h6>
+    <h6>Address: <%= @mail.email %></h6>
+    <h6>Subject: <%= @mail.subject %></h6>
+    <h6>Body:
+      <p><%= @mail.body %></p>
+    </h6>
+
+
+  </body>
+</html>
