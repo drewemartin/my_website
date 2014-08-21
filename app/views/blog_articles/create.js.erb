@@ -4,5 +4,5 @@
   $("#blog-article-errors").html("");
   $("#published").html("<%= escape_javascript(render(:partial => '/users/published_blog_list')) %>");
   $("#unpublished").html("<%= escape_javascript(render(:partial => '/users/unpublished_blog_list')) %>");
-  $("#new_review")[0].reset();
+  $("#new_blog_article")[0].reset();
 <% end %>
