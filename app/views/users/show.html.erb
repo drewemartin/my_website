@@ -1,6 +1,8 @@
 
 <h3><%= @user.email %></h3>
 
+<% render 'blog_article' %>
+
 <h4>Pulished Blog Posts</h4>
 <% @blog_posts.each do |blog| %>
   <% if blog.publish_now.downcase == 'yes' %>
