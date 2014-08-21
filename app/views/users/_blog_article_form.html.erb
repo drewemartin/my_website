@@ -1,8 +1,9 @@
-  
 
-<% form_for ([@user, @blog_article]), :remote => true do |f| %>
+<h3>New Blog Article</h3>  
+
+<%= form_for ([@user, @blog_article]), :remote => true do |f| %>
   
-  <%= render 'blog_articles_form_errors' %>
+  <%= render :partial => 'blog_articles_form_errors' %>
 
   <div class="field">
     <%= f.label :title %><br>
@@ -20,3 +21,21 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $(function() {
+
+    #('#new_blog_article')
+      .on('ajax:beforeSend', function() {
+        $("input[type='submit']")
+          .val('saving...')
+          .attr('disabled', 'disabled');
+      })
+      .on('ajax:complete', function(){
+        $("input[type='submit']")
+          .val('Create Blog Article')
+          .removeAttr('disabled');
+      });
+
+  })
+</script>

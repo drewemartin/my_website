@@ -1,30 +1,8 @@
 
-<h3><%= @user.email %></h3>
+<h1>Hello <%= @user.email %>!</h1>
 
 <%= render 'blog_article_form' %>
 
-<h4>Pulished Blog Posts</h4>
-<% @blog_posts.each do |blog| %>
-  <% if blog.publish_now.downcase == 'yes' %>
-    <div>
-      <h5><%= blog.title %></h5>
-      <p><%= blog.body %></p>
-      <p>Published: <%= blog.publish_now %></p>
-      <button type="button"><%= link_to 'Edit', edit_blog_article_path(blog) %></button>
-      <button type="button"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-    </div>
-  <% end %>
-<% end %>
+<%= render 'published_blog_list' %>
 
-<h4>Unpublished Blog Posts</h4>
-<% @blog_posts.each do |blog| %>
-  <% if blog.publish_now.downcase == 'no' %>
-    <div>
-      <h5><%= blog.title %></h5>
-      <p><%= blog.body %></p>
-      <p>Published: <%= blog.publish_now %></p>
-      <button type="button"><%= link_to 'Edit', edit_blog_article_path(blog) %></button>
-      <button type="button"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-    </div>
-  <% end %>
-<% end %>
+<%= render 'unpublished_blog_list' %>
