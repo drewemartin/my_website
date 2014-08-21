@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :letters
+
   root :to => 'welcomes#index'
 
   resources :user_sessions
