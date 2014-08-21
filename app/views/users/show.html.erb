@@ -1,19 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
-</p>
-
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% @blog_articles.each do |blog_article| %>
+  <tr>
+    <td><%= blog_article.body %></td>
+    <td><%= blog_article.title %></td>
+    <td><%= blog_article.publish_now %></td>
+    <td><%= blog_article.user_id %></td>
+    <td><%= link_to 'Show', blog_article %></td>
+    <td><%= link_to 'Edit', edit_blog_article_path(blog_article) %></td>
+    <td><%= link_to 'Destroy', blog_article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

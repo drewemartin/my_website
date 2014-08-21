@@ -25,6 +25,7 @@ class BlogArticlesController < ApplicationController
   # POST /blog_articles.json
   def create
     @blog_article = BlogArticle.new(blog_article_params)
+    @blog_article.user = current_user
 
     respond_to do |format|
       if @blog_article.save
@@ -69,6 +70,6 @@ class BlogArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_article_params
-      params.require(:blog_article).permit(:body, :title, :publish_now, :user_id)
+      params.require(:blog_article).permit(:body, :title, :publish_now)
     end
 end

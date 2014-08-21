@@ -1,0 +1,6 @@
+<div>
+  <% if blog_article.publish_now.downcase == 'yes' %>
+  <h3><%= blog_article.title %></h3>
+  <p><%= blog_article.body %></p>
+  <% end %>
+</div>
