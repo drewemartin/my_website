@@ -5,8 +5,7 @@ class GuestMailer < ActionMailer::Base
     @letter = letter
 
     mail(to: 'drew.e.martin@gmail.com', 
-      subject: "#{@letter.name} emailed you 
-      from your site")
+      subject: "#{@letter.name} emailed you from your site")
   end
 
 end

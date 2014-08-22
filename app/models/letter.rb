@@ -10,7 +10,7 @@ class Letter < ActiveRecord::Base
 
   validates :subject, presence: true
 
-  validates :message, presence: true 
+  # validates :message, presence: true 
 
   private
   def email_must_have_at_symbol

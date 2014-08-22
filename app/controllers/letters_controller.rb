@@ -1,15 +1,14 @@
 class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @letters = Letter.all.order(created_at: :desc)
+  end
 
   def new
     @letter = Letter.new
   end
 
-  
-
-  # POST /letters
-  # POST /letters.json
   def create
     @letter = Letter.new(letter_params)
 
@@ -44,6 +43,6 @@ class LettersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def letter_params
-      params.require(:letter).permit(:name, :email, :subject, :body)
+      params.require(:letter).permit(:name, :email, :subject, :message)
     end
 end
