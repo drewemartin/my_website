@@ -1,5 +1,5 @@
 class GuestMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "drew.e.martin@gmail.com"
 
   def send_to_admin(letter)
     @letter = letter
