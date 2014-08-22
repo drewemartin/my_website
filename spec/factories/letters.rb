@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :letter do
-    name "MyString"
-    email "MyString"
-    subject "MyString"
-    body "MyString"
+    name "bob"
+    email "test@test.com"
+    subject "something"
+    message "howdy! friends"
   end
 end

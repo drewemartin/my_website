@@ -1,15 +1,16 @@
 class Letter < ActiveRecord::Base
 
-  validates :name, presense: true
+  validates :name, presence: true
 
-  validates :email, presense: true
+  validates :email, presence: true
   validate :email_must_have_period
   validate :email_must_have_at_symbol
+  validate :email_length
 
 
-  validates :subject, presense: true
+  validates :subject, presence: true
 
-  validates :message, presense: true 
+  validates :message, presence: true 
 
   private
   def email_must_have_at_symbol
@@ -30,6 +31,16 @@ class Letter < ActiveRecord::Base
       end
 
     end  
+  end
+
+  def email_length
+    unless email.nil?
+      
+      if email.length < 7 
+        errors.add(:email, 'must follow name@site.com format')
+      end
+
+    end 
   end
 
 end
