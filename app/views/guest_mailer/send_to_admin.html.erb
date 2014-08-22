@@ -4,8 +4,14 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-   
-    <p>hello</p>
+    <h5>Email Sent from Your Site</h5>
+    <h6>Sender: <%= @letter.name %></h6>
+    <h6>Address: <%= @letter.email %></h6>
+    <h6>Subject: <%= @letter.subject %></h6>
+    <h6>Body:
+      <p><%= @letter.message %></p>
+    </h6>
+
 
   </body>
 </html>

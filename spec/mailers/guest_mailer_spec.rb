@@ -1,5 +1,5 @@
 require "rails_helper"
-
+#test works w/ basic mailer state
 RSpec.describe GuestMailer, :type => :mailer do
   describe 'send_to_admin' do
 
