@@ -3,7 +3,7 @@ class BlogArticlesController < ApplicationController
   # before_filter :load_user
   
   def index
-    @blog_articles = BlogArticle.all
+    @blog_articles = BlogArticle.published_blogs
   end
 
   # GET /blog_articles/1
@@ -26,7 +26,7 @@ class BlogArticlesController < ApplicationController
   # POST /blog_articles
   # POST /blog_articles.json
   def create
-    @blog_article = @user.blog_articles.build(blog_article_params)
+    @blog_article = BlogArticle.new(blog_article_params)
     @blog_article.user = current_user
 
     respond_to do |format|

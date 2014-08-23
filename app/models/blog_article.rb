@@ -8,6 +8,10 @@ class BlogArticle < ActiveRecord::Base
 
   validate :publish_now_is_yes_or_no
 
+  def published_blogs
+    where(publish_now: 'yes')
+  end
+
   private
   def publish_now_is_yes_or_no
     unless publish_now == nil
