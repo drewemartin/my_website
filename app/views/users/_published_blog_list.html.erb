@@ -2,6 +2,10 @@
 <% @user.blogs_in_order.each do |blog| %>
   <% if blog.publish_now == 'yes' %>
     <div>
+      <% if blog == @user.blogs_in_order.first %>
+        <h6>Most Recent</h6>
+      <% end %>
+
       <h5><%= blog.title %></h5>
       <p><%= blog.body %></p>
       <p>Published: <%= blog.publish_now %></p>
