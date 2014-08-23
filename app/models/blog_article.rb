@@ -12,6 +12,7 @@ class BlogArticle < ActiveRecord::Base
     where(publish_now: 'yes')
   end
 
+
   private
   def publish_now_is_yes_or_no
     unless publish_now == nil

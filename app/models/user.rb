@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
     blog_articles.order(created_at: :desc)
   end
 
+  
+
 
   private
   def must_have_certain_details
