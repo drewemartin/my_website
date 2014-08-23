@@ -17,6 +17,14 @@
       <%= link_to "Login", :login %>
     <% end %>
   </div>
+
+  <div>
+    <li><%= link_to 'About Me', abouts_path%></li>
+    <li><%= link_to 'Blog', blog_articles_path %></li>
+    <li><%= link_to 'Contact',  new_letter_path %></li>
+    <li><%= link_to 'Admin', login_path %></li>
+  </div>
+  
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
@@ -26,11 +34,7 @@
 
 <%= yield %>
 
-  <div>
-    <li><%= link_to 'About Me', abouts_path%></li>
-    <li><%= link_to 'Blog', blog_articles_path %></li>
-    <li><%= link_to 'Contact',  blog_articles_path %></li>
-  </div>
+
 
 </body>
 </html>
