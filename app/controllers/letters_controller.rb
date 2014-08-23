@@ -1,6 +1,6 @@
 class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter :require_login, only: [:new, :create]
   def index
     @letters = Letter.all.order(created_at: :desc)
   end
