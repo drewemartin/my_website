@@ -1,6 +1,5 @@
 class BlogArticlesController < ApplicationController
 
-  # before_filter :load_user
   
   def index
     @blog_articles = BlogArticle.published_blogs
@@ -31,7 +30,7 @@ class BlogArticlesController < ApplicationController
 
     respond_to do |format|
       if @blog_article.save
-        format.html { redirect_to @blog_article, notice: 'Blog article was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Blog article was successfully created.' }
         format.js {}
       else
         format.html { render :new, alert: 'there was an error' }
@@ -46,7 +45,7 @@ class BlogArticlesController < ApplicationController
     @blog_article = BlogArticle.find(params[:id])
     respond_to do |format|
       if @blog_article.update(blog_article_params)
-        format.html { redirect_to root_path, notice: 'Blog article was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Blog article was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog_article }
       else
         format.html { render :edit }
@@ -73,10 +72,6 @@ class BlogArticlesController < ApplicationController
 
     def blog_article_params
       params.require(:blog_article).permit(:body, :title, :publish_now)
-    end
-
-    def load_user
-      @user = User.find(current_user)
     end
 
 end
