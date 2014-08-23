@@ -1,6 +1,6 @@
 class BlogArticlesController < ApplicationController
 
-  before_filter :load_user
+  # before_filter :load_user
   
   def index
     @blog_articles = BlogArticle.all
@@ -9,6 +9,7 @@ class BlogArticlesController < ApplicationController
   # GET /blog_articles/1
   # GET /blog_articles/1.json
   def show
+    @blog_article = BlogArticle.find(params[:id])
   end
 
   # GET /blog_articles/new
@@ -18,7 +19,9 @@ class BlogArticlesController < ApplicationController
 
   # GET /blog_articles/1/edit
   def edit
+    @blog_article = BlogArticle.find(params[:id])
   end
+  
 
   # POST /blog_articles
   # POST /blog_articles.json
@@ -40,9 +43,10 @@ class BlogArticlesController < ApplicationController
   # PATCH/PUT /blog_articles/1
   # PATCH/PUT /blog_articles/1.json
   def update
+    @blog_article = BlogArticle.find(params[:id])
     respond_to do |format|
       if @blog_article.update(blog_article_params)
-        format.html { redirect_to user_path(current_user), notice: 'Blog article was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Blog article was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog_article }
       else
         format.html { render :edit }
