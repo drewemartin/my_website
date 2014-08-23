@@ -30,7 +30,7 @@ class LettersController < ApplicationController
   def destroy
     @letter.destroy
     respond_to do |format|
-      format.html { redirect_to letters_url, notice: 'Letter was successfully destroyed.' }
+      format.html { redirect_to letters_path, notice: 'Letter was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
