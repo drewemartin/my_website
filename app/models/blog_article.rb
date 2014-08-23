@@ -9,7 +9,7 @@ class BlogArticle < ActiveRecord::Base
   validate :publish_now_is_yes_or_no
 
   def published_blogs
-    where(publish_now: 'yes')
+    order(created_at: :desc).where(publish_now: 'yes')
   end
 
 

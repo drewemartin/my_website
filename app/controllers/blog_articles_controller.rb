@@ -1,5 +1,6 @@
 class BlogArticlesController < ApplicationController
 
+  skip_before_filter :require_login, only: [:index, :show]
   
   def index
     @blog_articles = BlogArticle.published_blogs
