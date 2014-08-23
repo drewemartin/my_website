@@ -10,10 +10,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    if current_user
-      @blog_article = @user.blog_articles.build
-    end
   end
 
   # GET /users/new
