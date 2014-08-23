@@ -1,7 +1,8 @@
 
-<h1>Hello <%= @user.email %>!</h1>
+<h1>Hello <%= @user.email %></h1>
 
-<%= render 'blog_article_form' %>
+<button><%= link_to 'New Blog Article', new_blog_article_path %></button>
+<button><%= link_to 'Sent Letters', letters_path %></button>
 
 <div id='published'>
 
@@ -15,28 +16,7 @@
 
 </div>
 
-<div id='letters'>
-
-  <%= 'letters' %>
-
-</div>
 
 
 
-<script type="text/javascript">
-  $(function() {
 
-    $('#new_blog_article')
-      .on('ajax:beforeSend', function() {
-        $("input[type='submit']")
-          .val('saving...')
-          .attr('disabled', 'disabled');
-      })
-      .on('ajax:complete', function(){
-        $("input[type='submit']")
-          .val('Create Blog Article')
-          .removeAttr('disabled');
-      });
-
-  });
-</script>
