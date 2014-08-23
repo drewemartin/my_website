@@ -3,6 +3,7 @@
   <h3><%= blog_article.title %></h3>
   <p>Created at: <%= blog_article.created_at %></p>
   <p><%= blog_article.body %></p>
+  <button><%= link_to 'Check out this blog post', blog_article_path(blog_article.id) %></button>
 
   <% end %>
 </div>
