@@ -11,9 +11,7 @@ Rails.application.routes.draw do
     resources :comments, only:[:new, :create, :destroy]
   end
 
-  resources :users do
-    resources :blog_articles
-  end
+  resources :users 
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
