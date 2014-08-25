@@ -1,9 +1,11 @@
 class BlogArticlesController < ApplicationController
 
   skip_before_filter :require_login, only: [:index, :show]
-  
+      
+
+
   def index
-    @blog_articles = BlogArticle.published_blogs
+    @blog_articles = BlogArticle.order(created_at: :desc).where(publish_now: 'yes')
   end
 
   # GET /blog_articles/1
@@ -58,6 +60,7 @@ class BlogArticlesController < ApplicationController
   # DELETE /blog_articles/1
   # DELETE /blog_articles/1.json
   def destroy
+    @blog_article = BlogArticle.find(params[:id])
     @blog_article.destroy
     respond_to do |format|
       format.html { redirect_to user_path(current_user), notice: 'Blog article was successfully destroyed.' }

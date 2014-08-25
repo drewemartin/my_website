@@ -8,10 +8,6 @@ class BlogArticle < ActiveRecord::Base
 
   validate :publish_now_is_yes_or_no
 
-  def published_blogs
-    order(created_at: :desc).where(publish_now: 'yes')
-  end
-
 
   private
   def publish_now_is_yes_or_no
