@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login, only: [:new, :create]
+  skip_before_filter :require_login, only: [:new, :create, :edit, :index]
 
 
   def show
@@ -24,6 +24,14 @@ class UsersController < ApplicationController
       else
         render :new 
       end  
+  end
+
+  def index
+    redirect_to root_path
+  end
+
+  def edit
+    redirect_to root_path
   end
 
 
