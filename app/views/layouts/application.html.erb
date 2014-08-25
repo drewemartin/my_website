@@ -14,7 +14,7 @@
     <li><%= link_to 'Contact',  new_letter_path %></li>
     <li><%= link_to 'Admin', login_path %></li>
     <% if current_user %>
-      <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+      <li><%= link_to "Account Page", user_path(current_user.id) %></li>
       <li><%= link_to "Logout", :logout, method: :post %></li>
     <% end %>
   </div>
