@@ -1,12 +1,20 @@
 class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login, only: [:new, :create]
+  skip_before_filter :require_login, only: [:new, :create, :show, :edit]
   def index
     @letters = Letter.all.order(created_at: :desc)
   end
 
   def new
     @letter = Letter.new
+  end
+
+  def show
+    redirect_to root_path
+  end
+
+  def edit
+    redirect_to root_path
   end
 
   def create
