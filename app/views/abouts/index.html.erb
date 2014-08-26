@@ -1,16 +1,4 @@
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<style type="text/css">
-  #chartdiv {
-  width   : 100%;
-  height    : 450px;
-  font-size : 11px;
-  }
-</style>
-
 
 <div id='name'>
   <h1>Drew Martin</h1>
@@ -49,143 +37,120 @@
   </p>
 </div>
 
-<div> 
-  <p>What I've Learned</p>
 
-  <div id='outer' style="width: 1000px; height:800px; margin: 0px auto; margin-top:20px; padding:10px">
-    <div id="main" style="width:1000px; height:200px; margin: 0px auto; ">
-        <div id="div1"></div>
-        <div id="div2"></div>
-        <div id="div3"></div>
-        <div id="div4"></div>
-    </div>
+<div id="canvas-holder">
+  <div class="jscharts">
+    <p>Rails</p>
+    <canvas id="chart-area1" width="100" height="100"/>
+  </div>
+
+  <div class="jscharts">
+    <p>Javascript</p>
+    <canvas id="chart-area2" width="100" height="100"/>
+  </div>
+
+  <div class="jscharts">
+    <p>Ruby</p>
+    <canvas id="chart-area3" width="100" height="100"/>
+  </div>
+
+  <div class="jscharts">
+    <p>Rspec</p>
+    <canvas id="chart-area4" width="100" height="100"/>
+  </div>
+  
 </div>
 
-<script type="text/javascript" src='http://d3js.org/d3.v3.min.js'></script>
 
-<script language="JavaScript">
+<script type="text/javascript">
 
-    var div1=d3.select(document.getElementById('div1'));
-    var div2=d3.select(document.getElementById('div2'));
-    var div3=d3.select(document.getElementById('div3'));
-    var div4=d3.select(document.getElementById('div4'));
+  var doughnutData1 = [
+        {
+          value: 15,
+          color: "#FFFFFF",
+          highlight: "#FFFFFF",
+          label: "Rails"
+        },
+        {
+          value: 85,
+          color: "rgba(254, 173, 107, 0.94)",
+          highlight: "rgba(254, 173, 107, 0.94)",
+          label: "Rails"
+        }
 
-    start();
+      ];
 
-    function onClick1() {
-        deselect();
-        div1.attr("class","selectedRadial");
-    }
+  var doughnutData2 = [
+        {
+          value: 15,
+          color: "#FFFFFF",
+          highlight: "#FFFFFF",
+          label: "Javascript"
+        },
+        {
+          value: 85,
+          color: "rgba(254, 173, 107, 0.94)",
+          highlight: "rgba(254, 173, 107, 0.94)",
+          label: "Javascript"
+        }
 
-    function onClick2() {
-        deselect();
-        div2.attr("class","selectedRadial");
-    }
+      ];
 
-    function onClick3() {
-        deselect();
-        div3.attr("class","selectedRadial");
-    }
+  var doughnutData3 = [
+        {
+          value: 10,
+          color: "#FFFFFF",
+          highlight: "#FFFFFF",
+          label: "Ruby"
+        },
+        {
+          value: 90,
+          color: "rgba(254, 173, 107, 0.94)",
+          highlight: "rgba(254, 173, 107, 0.94)",
+          label: "Ruby"
+        }
 
-    function labelFunction(val,min,max) {
+      ];
 
-    }
+  var doughnutData4 = [
+        {
+          value: 35,
+          color: "#FFFFFF",
+          highlight: "#FFFFFF",
+          label: "Rspec"
+        },
+        {
+          value: 65,
+          color: "rgba(254, 173, 107, 0.94)",
+          highlight: "rgba(254, 173, 107, 0.94)",
+          label: "Rspec"
+        }
 
-    function deselect() {
-        div1.attr("class","radial");
-        div2.attr("class","radial");
-        div3.attr("class","radial");
-    }
+      ];
 
-    function start() {
-
-        var rp1 = radialProgress(document.getElementById('div1'))
-                .label("RADIAL 1")
-                .onClick(onClick1)
-                .diameter(150)
-                .value(78)
-                .render();
-
-        var rp2 = radialProgress(document.getElementById('div2'))
-                .label("RADIAL 2")
-                .onClick(onClick2)
-                .diameter(150)
-                .value(132)
-                .render();
-
-        var rp3 = radialProgress(document.getElementById('div3'))
-                .label("RADIAL 3")
-                .onClick(onClick3)
-                .diameter(150)
-                .minValue(100)
-                .maxValue(200)
-                .value(150)
-                .render();
-
-    }
+      window.onload = function(){
+        var ctx1 = document.getElementById("chart-area1").getContext("2d");
+        window.myDoughnut = new Chart(ctx1).Doughnut(doughnutData1, {responsive : false});
+        var ctx2 = document.getElementById("chart-area2").getContext("2d");
+        window.myDoughnut = new Chart(ctx2).Doughnut(doughnutData2, {responsive : false});
+        var ctx3 =document.getElementById("chart-area3").getContext("2d");
+        window.myDoughnut = new Chart(ctx3).Doughnut(doughnutData3, {responsive : false});
+        var ctx4 = document.getElementById("chart-area4").getContext("2d");
+        window.myDoughnut = new Chart(ctx4).Doughnut(doughnutData4, {responsive : false});
+      };
 
 
 
+  </script>
 
 
 </script>
 
-</div>
-
-    <style>
-
-        #test .arc2 {
-            stroke-weight:0.1;
-            fill: #3660b0;
-        }
-
-        #outer {
-            background:#FFFFFF;
-            border-radius: 5px;
-            color: #000;
-        }
-
-        #div1, #div2, #div3, #div4 {
-            width: 33%;
-            height: 200px;
-            box-sizing: border-box;
-            float: left;
-        }
-
-        #div2 .arc {
-            stroke-weight: 0.1;
-            fill: #f0a417;
-        }
-
-        #div2 .arc2 {
-            stroke-weight: 0.1;
-            fill: #b00d08;
-        }
-
-        #div3 .arc {
-            stroke-weight: 0.1;
-            fill: #1d871b;
-        }
 
 
-        .selectedRadial {
-            border-radius: 3px;
-            background: #f4f4f4;
-            color: #000;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-            -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-            border: 1px solid rgba(200,200,200,0.85);
-        }
-
-        .radial {
-            border-radius: 3px;
-            background: #FFFFFF;
-            color: #000;
-
-        }
 
 
-    </style>
+
 
 
 
