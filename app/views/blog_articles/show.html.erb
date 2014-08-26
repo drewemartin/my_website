@@ -1,16 +1,24 @@
+<h3><%= @blog_article.title %></h3>
+<p>Created at: <%= @blog_article.created_at %></p>
+<p class='blog_body'><%= @blog_article.body %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog_article.body %>
-</p>
+<script type="text/javascript">
+  
+  $( document ).ready(function() {
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog_article.title %>
-</p>
+    var temp = 1;
 
+    replace();
 
+    function replace(){
+      $.each($('.blog_body'), function() { 
+        temp = $(this).text();
+        $(this).text('');
+        $(this).html(temp);
+      });
 
+    }
 
+  });
 
-
+</script>
