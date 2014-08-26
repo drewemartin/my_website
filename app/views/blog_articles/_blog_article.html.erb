@@ -2,7 +2,7 @@
   <% if blog_article.publish_now.downcase == 'yes' %>
   <h3><%= blog_article.title %></h3>
   <p>Created at: <%= blog_article.created_at %></p>
-  <p class='blog_body'><%= blog_article.body %></p>
+  <div class='blog_body'><%= blog_article.body %></div>
   <button><%= link_to 'Check out this blog post', blog_article_path(blog_article.id) %></button>
 
   <% end %>

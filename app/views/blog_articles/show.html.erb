@@ -1,10 +1,11 @@
 <h3><%= @blog_article.title %></h3>
 <p>Created at: <%= @blog_article.created_at %></p>
-<p class='blog_body'><%= @blog_article.body %></p>
+<div class='blog_body'><%= @blog_article.body %></div>
 
 <script type="text/javascript">
-  
   $( document ).ready(function() {
+
+    console.log('hello');
 
     var temp = 1;
 
@@ -16,9 +17,6 @@
         $(this).text('');
         $(this).html(temp);
       });
-
     }
-
   });
-
 </script>
