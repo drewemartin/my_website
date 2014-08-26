@@ -2,3 +2,30 @@
 
   
 <%= render @blog_articles %>
+
+
+<script type="text/javascript">
+  
+  
+
+  $( document ).ready(function() {
+
+    var temp = 1;
+
+    replace();
+
+    function replace(){
+      $.each($('.blog_body'), function() { 
+        temp = $(this).text();
+        $(this).text('');
+        $(this).html(temp);
+      });
+
+    }
+
+      
+
+  });
+
+
+</script>
