@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :comments, only:[:new, :create, :destroy]
   end
 
+
+  mount Ckeditor::Engine => '/ckeditor'
+  
   resources :users 
 
   get 'login' => 'user_sessions#new', :as => :login
