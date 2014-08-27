@@ -1,4 +1,6 @@
 
+
+
 <div id='name'>
   <h1>Drew Martin</h1>
 </div>
@@ -36,6 +38,7 @@
   </p>
 </div>
 
+<%= javascript_include_tag "Chart" %>
 
 <div id="canvas-holder">
   <div class="jscharts">
@@ -61,10 +64,29 @@
 </div>
 
 
+
 <script type="text/javascript">
 
-  $(function() {
-    console.log( "ready!" );
+
+$(document).ready(function(){
+
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1)
+    {
+    console.log('first')
+    // Set the URL to whatever it was plus "#".
+    url = document.URL+"#";
+    location = "#";
+
+    //Reload the page
+    location.reload(true);
+
+    }
+    else{
+      console.log('second')
+      $(function() {
+
+    
 
     var doughnutData1 = [
         {
@@ -131,6 +153,12 @@
       ];
 
       window.onload = function(){
+
+        if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+        } 
+
         var ctx1 = document.getElementById("chart-area1").getContext("2d");
         window.myDoughnut = new Chart(ctx1).Doughnut(doughnutData1, {responsive : false});
         var ctx2 = document.getElementById("chart-area2").getContext("2d");
@@ -143,6 +171,17 @@
 
   });
 
+    }
+    });
+    
+   
+
+    
+    
+
+
+
+  
   
   
 
