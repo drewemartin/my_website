@@ -8,37 +8,22 @@
 </head>
 <body>
 
-  <div id='nav'>
-    <li><%= link_to 'Welcome', root_path %></li>
-    <li><%= link_to 'About Me', abouts_path%></li>
-    <li><%= link_to 'Blog', blog_articles_path %></li>
-    <li><%= link_to 'Contact',  new_letter_path %></li>
-    <li><%= link_to 'Admin', login_path %></li>
-    <% if current_user %>
-      <li><%= link_to "Account Page", user_path(current_user.id) %></li>
-      <li><%= link_to "Logout", :logout, method: :post %></li>
-    <% end %>
-  </div>
+<%= render 'layouts/navbar' %>
+
+<div class="container">
 
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
 
+  <%= yield %>
 
-<%= yield %>
-<hr>
-<div id='footer'>
-    <li><%= link_to 'Welcome', root_path %></li>
-    <li><%= link_to 'About Me', abouts_path%></li>
-    <li><%= link_to 'Blog', blog_articles_path %></li>
-    <li><%= link_to 'Contact',  new_letter_path %></li>
-    <li><%= link_to 'Admin', login_path %></li>
-    <% if current_user %>
-      <li><%= link_to "Account Page", user_path(current_user.id) %></li>
-      <li><%= link_to "Logout", :logout, method: :post %></li>
-    <% end %>
-  </div>
+ 
+
+</div>
+
+
 
 
 
