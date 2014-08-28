@@ -13,12 +13,10 @@ gem 'spring',        group: :development
 gem 'faker'
 gem 'sorcery'
 gem 'ckeditor'
+gem "therubyracer"
+gem "less-rails"   
+gem "twitter-bootstrap-rails"
 
-group :assets do
-  gem "therubyracer"
-  gem "less-rails" 
-  gem "twitter-bootstrap-rails"
-end
 
 
 group :development, :test do
