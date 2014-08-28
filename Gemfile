@@ -14,6 +14,12 @@ gem 'faker'
 gem 'sorcery'
 gem 'ckeditor'
 
+group :assets do
+  gem "therubyracer"
+  gem "less-rails" 
+  gem "twitter-bootstrap-rails"
+end
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
