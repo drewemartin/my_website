@@ -1,8 +1,33 @@
-<h1>Drew Martin</h1>
 
-<div>
-  <li><%= link_to 'About Me', abouts_path%></li>
-  <li><%= link_to 'Blog', blog_articles_path %></li>
-  <li><%= link_to 'Contact',  new_letter_path %></li>
+<div class='row'>
+  <div class='col-md-4'></div>
+  <div class='col-md-4'>
+    <div class='text-center'>
+      <%= image_tag 'edit.png' %>
+    </div> 
+  </div>
+  <div class='col-md-4'></div>
 </div>
+
+<div class='row' id='margin15'>
+  <div class='col-lg-4'></div>
+  <div class='col-lg-4' align='center'>
+    <h1>Drew Martin</h1>
+  </div>
+  <div class='col-lg-4'></div>
+</div>
+
+<div class="btn-group btn-group-justified" id='margin60'>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= link_to 'About Me', abouts_path%></button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= link_to 'Blog', blog_articles_path %></button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= link_to 'Contact',  new_letter_path %></button>
+  </div>
+</div>
+
+
 

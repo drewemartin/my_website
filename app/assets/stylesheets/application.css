@@ -14,3 +14,11 @@
  *= require bootstrap_and_overrides
  *= require_self
  */
+
+#margin60{
+	margin-bottom: 60px;
+}
+
+#margin15{
+	margin: 15px;
+}
