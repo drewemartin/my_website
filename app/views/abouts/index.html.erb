@@ -1,67 +1,21 @@
 
-
-
-<div id='name'>
-  <h1>Drew Martin</h1>
+<div class='row'>
+  <div class='col-lg-8'>
+    <h1>About Me</h1>
+    <%= render 'bio' %>
+  </div>
+  <div class='col-lg-4' align='center'>
+    <div class='text-center'>
+      <%= image_tag 'edit.png' %>
+    </div>
+  </div>
 </div>
 
-<div id='contact_box'>
-  <li>M: 610-564-3142</li>
-  <li>E: Drew.E.Martin@gmail.com</li>
-  <li>Github: github.com/drewemartin</li>
-</div>
 
-<div id='statement_box'>
-  <p>
-    Hello,
-  </p>
-  <p>
-    Thank you for visiting my website. When I considered a career in web development I asked myself 3 questions: Is it engrossing? yes. Does it have a meaningful impact on the world? yes. Is it cool? Beyond a doubt!
-  </p>
-  <p>
-    Until recently I had always engaged tech in an indirect manner. About a year ago I was working for the state of Connecticut within the agency that implemented the Affordable Care Act (ACA ) for Connecticut. Tech was all around me. My office used great scheduling software, our database was superb and our website, one of the few public healthcare websites that was lauded by states that wanted to implement the ACA, ran smoothly. That said, I was still only an end-user. I had no direct role actually building these things.
-  </p>
-  <p>
-    When the federal website Healthcare.gov crashed this not only impacted my work (since my office depended on the site to work the same way Google Fonts is dependent on Google working) but my internal thought processes. All of a sudden, tech, and web applications in particular, became relevant to me.
-  </p>
-  <p>
-    Though I couldn’t solve the site's problems, I could learn about the technologies and skill sets that make web applications viable. Armed with this goal I began learn about HTML and CSS and I eventually decided to quit my job in order to study Ruby on Rails and JavaScript development at Bitmaker Labs.
-  </p>
-  <p>
-    Since deciding to take up web development I have never had a boring day and I have truly become a builder. What is more, I have strengthened my commitment to a lifetime of learning. Sure, I am still an occasional end user (one must use a computer to code!), but I now able to create unique and meaningful things.
-  </p>
-  <p>
-   Best, 
-  </p>
-  <p>
-    Drew
-  </p>
-</div>
 
 <%= javascript_include_tag "Chart" %>
 
-<div id="canvas-holder">
-  <div class="jscharts">
-    <p>Rails</p>
-    <canvas id="chart-area1" width="100" height="100"/>
-  </div>
-
-  <div class="jscharts">
-    <p>Javascript</p>
-    <canvas id="chart-area2" width="100" height="100"/>
-  </div>
-
-  <div class="jscharts">
-    <p>Ruby</p>
-    <canvas id="chart-area3" width="100" height="100"/>
-  </div>
-
-  <div class="jscharts">
-    <p>Rspec</p>
-    <canvas id="chart-area4" width="100" height="100"/>
-  </div>
-  
-</div>
+<%= render 'charts' %>
 
 
 
