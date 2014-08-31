@@ -1,19 +1,19 @@
 
 <div class='row'>
+  <div class='col-lg-1'></div>
   <div class='col-lg-4' align='center'>
-    <h1>&nbsp;</h1>
-    <div>
+    <div id='abouts_pic_holder'>
       <%= image_tag 'edit.png', :id => 'abouts_pic' %>
     </div>
   </div>
-  <div class='col-lg-8' >
+  <div class='col-lg-6'>
     <h1 id='first'>About Me</h1>
     <div class='row-transparency'>
       <%= render 'bio' %>
     </div> 
     <div class='row'>
       <div class='col-lg-12' >
-        <h1>Skills</h1>
+        <h1 class='title_padding'>My Skills</h1>
       </div>
     </div>
     <div class='row'>
@@ -22,7 +22,7 @@
     </div>
     <div class='row'>
       <div class='col-lg-12' >
-        <h1>Hobbies</h1>
+        <h1 class='title_padding'>My Hobbies</h1>
       </div>
     </div>
     <div class='row'>
@@ -30,6 +30,7 @@
       <div class='col-lg-2'></div>
     </div>
   </div>
+  <div class='col-lg-1'></div>
 </div>
 
 <div class="btn-group btn-group-justified" id='abouts_footer'>

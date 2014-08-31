@@ -19,6 +19,23 @@ body{
  	background-image: url(/assets/whitecubes.png);
 }
 
+.title_padding{
+	padding-top: 20px;
+}
+
+.paragraph_font{
+	font-size: 15px;
+}
+
+.hobby_size{
+	height: 100px;
+	width: 100px;
+}
+
+#abouts_pic_holder{
+	padding-top: 25px;
+}
+
 #abouts_footer, #blog_articles_footer{
 	padding-top: 95px;
 	padding-bottom: 60px;
