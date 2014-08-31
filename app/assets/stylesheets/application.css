@@ -23,8 +23,18 @@ body{
 	padding-top: 20px;
 }
 
+.created_on{
+	font-size: 13px;
+	margin-top: -8px;
+	padding-bottom: 10px;
+}
+
 .paragraph_font{
 	font-size: 15px;
+}
+
+.blog_body{
+	font-size: 17px;
 }
 
 .hobby_size{
