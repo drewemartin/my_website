@@ -1,8 +1,9 @@
 
 <% if blog_article.publish_now.downcase == 'yes' %>
   <h3><%= link_to blog_article.title, blog_article_path(blog_article.id) %></h3>
-  <div class='row-transparency'>
+  <div >
     <p>Created at: <%= blog_article.created_at %></p>
     <div class='blog_body'><%= blog_article.body %></div>
+    <br>
   </div>
 <% end %>
