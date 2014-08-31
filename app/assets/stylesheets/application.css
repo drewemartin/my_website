@@ -24,6 +24,33 @@ body{
 	padding-bottom: 60px;
 }
 
+#abouts_pic{
+	height: 496px;
+	width: 360px;
+}
+
+#welcomes_pic{
+	height: 442px;
+	width: 300px;
+}
+
+.btn-info{
+	margin-top: 10px;
+}
+
+#letter_message{
+	width: 220px;
+	height: 220px;
+}
+
+input{
+	width: 220px;
+}
+
+label{
+	padding-top: 15px;
+}
+
 #user_sessions_footer{
 	padding-top: 295px;
 	padding-bottom: 60px;
