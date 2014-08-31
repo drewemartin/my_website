@@ -6,6 +6,7 @@ class BlogArticlesController < ApplicationController
 
   def index
     @blog_articles = BlogArticle.order(created_at: :desc).where(publish_now: 'yes')
+    @recent_articles = BlogArticle.order(created_at: :desc).where(publish_now: 'yes')
   end
 
   # GET /blog_articles/1

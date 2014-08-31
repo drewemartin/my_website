@@ -7,7 +7,9 @@
   </div>
   <div class='col-lg-8' >
     <h1 id='first'>About Me</h1>
-    <%= render 'bio' %>
+    <div class='row-transparency'>
+      <%= render 'bio' %>
+    </div> 
     <div class='row'>
       <div class='col-lg-12' >
         <h1>Skills</h1>
@@ -70,7 +72,6 @@ $(document).ready(function(){
 
     }
     else{
-      console.log('second')
       $(function() {
 
     
@@ -78,8 +79,8 @@ $(document).ready(function(){
     var doughnutData1 = [
         {
           value: 15,
-          color: "#FFFFFF",
-          highlight: "#FFFFFF",
+          color: "rgba(255, 255, 255, 0.0)",
+          highlight: "rgba(255, 255, 255, 0.0)",
           label: "Rails"
         },
         {
@@ -94,8 +95,8 @@ $(document).ready(function(){
   var doughnutData2 = [
         {
           value: 15,
-          color: "#FFFFFF",
-          highlight: "#FFFFFF",
+          color: "rgba(255, 255, 255, 0.0)",
+          highlight: "rgba(255, 255, 255, 0.0)",
           label: "Javascript"
         },
         {
@@ -110,8 +111,8 @@ $(document).ready(function(){
   var doughnutData3 = [
         {
           value: 10,
-          color: "#FFFFFF",
-          highlight: "#FFFFFF",
+          color: "rgba(255, 255, 255, 0.0)",
+          highlight: "rgba(255, 255, 255, 0.0)",
           label: "Ruby"
         },
         {
@@ -126,8 +127,8 @@ $(document).ready(function(){
   var doughnutData4 = [
         {
           value: 35,
-          color: "#FFFFFF",
-          highlight: "#FFFFFF",
+          color: "rgba(255, 255, 255, 0.0)",
+          highlight: "rgba(255, 255, 255, 0.0)",
           label: "Rspec"
         },
         {
