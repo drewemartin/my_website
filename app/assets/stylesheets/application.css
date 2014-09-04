@@ -19,6 +19,10 @@ body{
  	background-image: url(/assets/whitecubes.png);
 }
 
+.btn .btn-default{
+	color: #428bca;
+}
+
 .title_padding{
 	padding-top: 20px;
 }

@@ -34,15 +34,20 @@
 </div>
 
 <div class="btn-group btn-group-justified" id='abouts_footer'>
-  <div class="btn-group" >
-    <button type="button" class="btn btn-default"><%= link_to 'Welcome', root_path%></button>
+  <div class="btn-group">
+    <%= link_to(root_path) do %>
+    <button type="button" class="btn btn-default">Welcome</button>
+    <% end %>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn btn-default"><%= link_to 'Blog', blog_articles_path %></button>
+    <%= link_to(blog_articles_path) do %>
+    <button type="button" class="btn btn-default">Blog</button>
+    <% end %>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn btn-default"><%= link_to 'Contact',  new_letter_path %></button>
-  </div>
+    <%= link_to(new_letter_path) do %>
+    <button type="button" class="btn btn-default">Contact</button>
+    <% end %>
 </div>
 
 

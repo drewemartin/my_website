@@ -18,7 +18,9 @@
         <li class='white_header_text'><%= link_to 'About Me', abouts_path%></li>
         <li class='white_header_text'><%= link_to 'Blog', blog_articles_path %></li>
         <li class='white_header_text'><%= link_to 'Contact',  new_letter_path %></li>
-        <li class='white_header_text'><%= link_to 'Admin', login_path %></li>
+        <% if current_user.nil? %>
+          <li class='white_header_text'><%= link_to 'Admin', login_path %></li>
+        <% end %>  
         <% if current_user %>
           <li class='white_header_text'><%= link_to "Account Page", user_path(current_user.id) %></li>
           <li class='white_header_text'><%= link_to "Logout", :logout, method: :post %></li>
