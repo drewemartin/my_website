@@ -19,7 +19,20 @@ body{
  	background-image: url(/assets/whitecubes.png);
 }
 
-.btn .btn-default{
+#error_explanation{
+	background-color: rgba(227, 110, 83, 0.6);
+	border-radius: 50%;
+}
+
+.error_lis{
+	list-style-type: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.footer_text_color{
 	color: #428bca;
 }
 
