@@ -19,6 +19,10 @@ body{
  	background-image: url(/assets/whitecubes.png);
 }
 
+#notice_alert_div{
+	background-color: rgba(227, 110, 83, 0.6);
+}
+
 
 .error_header{
 	margin: auto;
