@@ -21,11 +21,23 @@ body{
 
 #alert_div{
 	background-color: rgba(227, 110, 83, 0.6);
+	margin-top: -20px;
+}
+
+#notice_div{
+	background-color: rgba(67, 218, 175, 0.6);
+	margin-top: -20px;
+
+}
+
+#alert_div, #notice_div{
+	border-radius: 0px 0px 5px 5px;
 }
 
 #notice, #alert{
-
+	margin-top: 10px;
 }
+
 
 .error_header{
 	margin: auto;
