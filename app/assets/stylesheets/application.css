@@ -21,8 +21,13 @@ body{
 
 #notice_alert_div{
 	background-color: rgba(227, 110, 83, 0.6);
+	padding-bottom:;
+	padding-bottom:;
 }
 
+#notice, #alert{
+
+}
 
 .error_header{
 	margin: auto;
