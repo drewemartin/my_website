@@ -25,7 +25,7 @@ class LettersController < ApplicationController
 
         GuestMailer.send_to_admin(@letter).deliver
 
-        format.html { redirect_to root_path, notice: 'Message Delivered' }
+        format.html { redirect_to new_letter_path, notice: 'Message Delivered' }
         format.js {}
       else
         format.html { render :new, alert: 'Sorry, there was an error' }

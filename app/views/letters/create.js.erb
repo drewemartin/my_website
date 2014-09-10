@@ -1,4 +1,4 @@
-<% if @review.errors.present? %>
+<% if @letter.errors.present? %>
   $("#error_div").html("<%= escape_javascript(render(:partial => '/letters/letter_form_errors')) %>");
 <% else %>
   $("#error_div").html("");
