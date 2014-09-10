@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
       if @user.save
         auto_login(@user)
-        redirect_to user_path(@user), notice: 'Profile successfully created.' 
+        redirect_to user_path(@user), notice: 'Profile successfully created' 
         
       else
         render :new 
