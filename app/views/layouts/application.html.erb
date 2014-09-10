@@ -14,9 +14,13 @@
 
 <div class="container">
 
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
+  <div class='row'>
+
+    <div id='notice_alert_div'>
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
+    </div>
+
   </div>
 
   <%= yield %>
