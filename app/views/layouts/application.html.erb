@@ -16,17 +16,22 @@
 
   <div class='row'>
 
-    <div id='notice_alert_div' align='center'>
       <% if flash[:notice] != nil %>
-        <h3 id="notice"><%= flash[:notice] %></h3>
+        <div class='col-lg-12' id='notice_div' align='center'>
+          <h3 id="notice"><%= flash[:notice] %></h3>
+        </div>        
       <% elsif flash[:alert] != nil %>
-        <h3 id="alert"><%= flash[:alert] %></h3>
+        <div class='col-lg-12' id='alert_div' align='center'>
+          <h3 id="alert"><%= flash[:alert] %></h3>
+        </div>
       <% end %>
-    </div>
 
   </div>
 
   <%= yield %>
+
+
+
 
  
 
