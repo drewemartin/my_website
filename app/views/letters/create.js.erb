@@ -1,5 +1,5 @@
 <% if @letter.errors.present? %>
-  $("#error_div").html("<%= escape_javascript(render(:partial => '/letters/letter_form_errors')) %>");
+  $("#insert_errors").html("<%= escape_javascript(render(:partial => '/letters/letter_form_errors')) %>");
 <% else %>
   $("#error_div").html("");
   $("#new_letter")[0].reset();
