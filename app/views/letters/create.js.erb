@@ -1,6 +1,10 @@
 <% if @letter.errors.present? %>
   $("#insert_errors").html("<%= escape_javascript(render(:partial => '/letters/letter_form_errors')) %>");
+<% elsif $('#notice_div').length == true %>
+	
 <% else %>
   $("#error_div").html("");
+  $('#letter_sucess_message').attr('id','notice_div').append("<h3 id='notice'>Message Sent</h3>");
   $("#new_letter")[0].reset();
+  $('#notice_div').fadeTo(25000,0.0);
 <% end %>
