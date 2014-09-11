@@ -3,18 +3,19 @@
 <% else %>
   $("#error_div").html("");
   $('#letter_sucess_message').html('');
-  $('#letter_sucess_message').append("<div id='notice_div' align='center'><h3 id='notice'>Message Sent</h3></div>");
-  $('#notice_div').slideDown(500).delay(3000).slideUp(500);
+  $('.container').prepend("<div id='letter_notice_div' align='center'><h3 id='letter_notice'>Message Sent</h3></div>");
+  $('#letter_notice_div').hide()
+  $('#letter_notice_div').slideDown("slow").delay(5000).slideUp(500);
   $("#new_letter")[0].reset();
 <% end %>
 
 // html("<%= escape_javascript(flash[:notice])%>")
 
-$(".welcome").fadeOut(9500,function(){
-        $(".freelance").fadeIn(10000, function(){
-            $(".freelance").fadeOut(4500);
-        });
-    });
+// $(".welcome").fadeOut(9500,function(){
+//         $(".freelance").fadeIn(10000, function(){
+//             $(".freelance").fadeOut(4500);
+//         });
+//     });
 
 
 
