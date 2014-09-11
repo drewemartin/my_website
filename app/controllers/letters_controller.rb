@@ -19,7 +19,6 @@ class LettersController < ApplicationController
 
   def create
     @letter = Letter.new(letter_params)
-    flash[:notice] = 'Message Delivered'
     respond_to do |format|
       if @letter.save
 
