@@ -63,14 +63,144 @@
 
 <script type="text/javascript">
 
-$(document).ready(function(){
-function testScroll(){
-    if(window.pageYOffset>400)alert('User has scrolled at least 400 px!');
-}
-window.onscroll=testScroll
-
+$(window).bind("scroll", function(){            
+  $('canvas').each(function(i){    
+        var options = {
+                animationEasing: 'easeOutQuart',        
+                animationSteps: 300,
+                segmentShowStroke: false,
+                segmentStrokeColor: 'FFF'                   
+        };
+        var doughnutData = [
+            {value: 30, color:"#F7464A"},               
+            {value : 120,color : "#4D5360"}         
+        ];
+        var myDoughnut = new Chart(document.getElementById("chart-area1").getContext("2d")).Doughnut(doughnutData, options);
+        $(window).unbind(i);
+  });
 });
+
+
+
+// $(document).ready(function(){
+//   var x = 1
+// function testScroll(){
+//     if(window.pageYOffset>$('#load_charts').offset().top && x === 1){
+//       alert('User has scrolled to ' + $('#load_charts').offset().top);
+//       x = 2;
+//     }
+// }
+// window.onscroll=testScroll
+
+// });
     
+
+
+
+// $(document).ready(function(){
+
+//     //Check if the current URL contains '#'
+//     if(document.URL.indexOf("#")==-1)
+//     {
+//     console.log('first')
+//     // Set the URL to whatever it was plus "#".
+//     url = document.URL+"#";
+//     location = "#";
+
+//     //Reload the page
+//     location.reload(true);
+
+//     }
+//     else{
+  //     $(function() {
+
+    
+
+  //   var doughnutData1 = [
+  //       {
+  //         value: 15,
+  //         color: "rgba(255, 255, 255, 0.0)",
+  //         highlight: "rgba(255, 255, 255, 0.0)",
+  //         label: "Rails"
+  //       },
+  //       {
+  //         value: 85,
+  //         color: "rgba(254, 173, 107, 0.94)",
+  //         highlight: "rgba(254, 173, 107, 0.94)",
+  //         label: "Rails"
+  //       }
+
+  //     ];
+
+  // var doughnutData2 = [
+  //       {
+  //         value: 15,
+  //         color: "rgba(255, 255, 255, 0.0)",
+  //         highlight: "rgba(255, 255, 255, 0.0)",
+  //         label: "Javascript"
+  //       },
+  //       {
+  //         value: 85,
+  //         color: "rgba(254, 173, 107, 0.94)",
+  //         highlight: "rgba(254, 173, 107, 0.94)",
+  //         label: "Javascript"
+  //       }
+
+  //     ];
+
+  // var doughnutData3 = [
+  //       {
+  //         value: 10,
+  //         color: "rgba(255, 255, 255, 0.0)",
+  //         highlight: "rgba(255, 255, 255, 0.0)",
+  //         label: "Ruby"
+  //       },
+  //       {
+  //         value: 90,
+  //         color: "rgba(254, 173, 107, 0.94)",
+  //         highlight: "rgba(254, 173, 107, 0.94)",
+  //         label: "Ruby"
+  //       }
+
+  //     ];
+
+  // var doughnutData4 = [
+  //       {
+  //         value: 35,
+  //         color: "rgba(255, 255, 255, 0.0)",
+  //         highlight: "rgba(255, 255, 255, 0.0)",
+  //         label: "Rspec"
+  //       },
+  //       {
+  //         value: 65,
+  //         color: "rgba(254, 173, 107, 0.94)",
+  //         highlight: "rgba(254, 173, 107, 0.94)",
+  //         label: "Rspec"
+  //       }
+
+  //     ];
+
+  //     window.onload = function(){
+
+  //       if(!window.location.hash) {
+  //       window.location = window.location + '#loaded';
+  //       window.location.reload();
+  //       } 
+
+  //       var ctx1 = document.getElementById("chart-area1").getContext("2d");
+  //       window.myDoughnut = new Chart(ctx1).Doughnut(doughnutData1, {responsive : false});
+  //       var ctx2 = document.getElementById("chart-area2").getContext("2d");
+  //       window.myDoughnut = new Chart(ctx2).Doughnut(doughnutData2, {responsive : false});
+  //       var ctx3 =document.getElementById("chart-area3").getContext("2d");
+  //       window.myDoughnut = new Chart(ctx3).Doughnut(doughnutData3, {responsive : false});
+  //       var ctx4 = document.getElementById("chart-area4").getContext("2d");
+  //       window.myDoughnut = new Chart(ctx4).Doughnut(doughnutData4, {responsive : false});
+  //     };
+
+  // });
+
+//     }
+//     });
    
 </script>
 
