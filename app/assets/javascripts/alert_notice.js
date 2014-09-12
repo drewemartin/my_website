@@ -1,0 +1,1 @@
+if($('#alert').text() !== null){console.log('alert_notice is working')}
