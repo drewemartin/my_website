@@ -156,22 +156,23 @@ label{
 }
 
 #user_sessions_footer{
-	padding-top: 295px;
+	padding-top: 250px;
 	padding-bottom: 60px;
 }
 
 #users_footer{
-	padding-top: 280px;
+	padding-top: 230px;;
 	padding-bottom: 60px;
 }
 
 #letters_footer{
-	padding-top: 200px;
+	padding-top: 75px;
 	padding-bottom: 60px;
 }
 
 #margin60{
 	padding-bottom: 60px;
+	padding-top: 10px;
 }
 
 #margin15{

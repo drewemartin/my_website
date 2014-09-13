@@ -21,5 +21,4 @@ $( document ).ready(function() {
   }
 });
 
-// animate({ left: $(this).width() });
-// 
+ 
