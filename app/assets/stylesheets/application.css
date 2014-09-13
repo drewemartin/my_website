@@ -19,6 +19,10 @@ body{
  	background-image: url(/assets/whitecubes.png);
 }
 
+#pic_holder{
+	margin-top: 20px;
+}
+
 #welcomes_name{
 	position: relative;
 	font-family: inherit;
