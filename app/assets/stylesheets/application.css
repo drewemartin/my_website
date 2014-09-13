@@ -19,6 +19,21 @@ body{
  	background-image: url(/assets/whitecubes.png);
 }
 
+#welcomes_name{
+	position: relative;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 36px;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+
 #letter_notice_div{
 	background-color: rgba(67, 218, 175, 0.6);
 	margin-top: -20px;
