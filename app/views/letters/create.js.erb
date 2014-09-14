@@ -1,12 +1,15 @@
 <% if @letter.errors.present? %>
   $("#insert_errors").html("<%= escape_javascript(render(:partial => '/letters/letter_form_errors')) %>");
+  $('#insert_errors').show();
+
 <% else %>
   $("#error_div").html("");
   $('#letter_sucess_message').html('');
   $('.container').prepend("<div id='letter_notice_div' align='center'><h3 id='letter_notice'>Message Sent</h3></div>");
   $('#letter_notice_div').hide()
-  $('#letter_notice_div').slideDown("slow").delay(5000).slideUp(500);
   $("#new_letter")[0].reset();
+  $('#insert_errors').hide();
+  $('#letter_notice_div').slideDown("slow").delay(5000).slideUp(500);
 <% end %>
 
 
