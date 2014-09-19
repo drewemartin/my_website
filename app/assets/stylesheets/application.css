@@ -16,7 +16,7 @@
  */
 
 body{
- 	background-image: url(/assets/whitecubes.png);
+ 	/*background-image: url(/assets/whitecubes.png);*/
 }
 
 #pic_holder{
@@ -191,14 +191,22 @@ h4{
 	color: white;
 }
 
+
 .navbar-default .navbar-header .navbar-brand {
-    color: white;
+    color: black;
 } 
 
 .navbar-default{
-	background-color: #96b97d
+	
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #ffffff;
+    color: black;
+    padding-bottom: 0px;
+    margin-right: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
+
+.navbar-default .navbar-nav > li > a:hover{
+	border-bottom: 2px solid black;
+} 
