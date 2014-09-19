@@ -1,6 +1,10 @@
 <% if @letter.errors.present? %>
   $("#insert_errors").html("<%= escape_javascript(render(:partial => '/letters/letter_form_errors')) %>");
   $('#insert_errors').show();
+  $('#error_div').hide({effect:'explode', pieces: 10, duration: 1000, complete: function(){
+    	$('#error_div').show();
+    }
+  })
 
 <% else %>
   $("#error_div").html("");
