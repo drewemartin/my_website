@@ -16,8 +16,7 @@ gem 'ckeditor'
 gem "therubyracer"
 gem "less-rails"   
 gem "twitter-bootstrap-rails"
-gem 'capistrano'
-gem 'capistrano-ext'
+
 
 
 
