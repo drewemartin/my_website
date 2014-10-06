@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
 
   function loadImage() {
-    $("#welcomes_pic").effect("slide", { direction: "down" }, 1800); 
+    $("#personal_pic").effect("slide", { direction: "down" }, 1800); 
   }
 
   function loadName(){
